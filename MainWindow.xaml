@@ -1,0 +1,327 @@
+﻿<Window x:Class="_2progectWPF.MainWindow"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+Title="ControlTemplateExampies"
+Height="1000"
+Width="1400">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="#FFB63C3C" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Верхняя строка -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Buttons -->
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Button"
+FontWeight="Bold"
+Margin="0,0,0,10" Foreground="White"/>
+
+                    <Button Content="Default"
+Width="120"
+Margin="0,5" Foreground="White" BorderBrush="White" Background="Black"/>
+
+                    <Button Content="Normal"
+Width="120"
+Margin="0,5" Background="Black" BorderBrush="White" Foreground="White"/>
+
+                    <Button Content="Disabled"
+Width="120"
+IsEnabled="false"
+Margin="0,5" Foreground="Black" BorderBrush="Black" Background="Black" Click="Button_Click"/>
+                </StackPanel>
+
+                <!-- CheckBoxes -->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="CheckBox"
+FontWeight="Bold"
+Margin="0,0,0,10" Foreground="White"/>
+
+                    <CheckBox Content="Normal"
+Margin="0,5" Foreground="White" Background="White" BorderBrush="Black"/>
+
+                    <CheckBox Content="Checked"
+IsChecked="True"
+Margin="0,5" Background="White" BorderBrush="Black" Foreground="White"/>
+
+                    <CheckBox Content="Indeterminate"
+IsThreeState="True"
+IsChecked="{x:Null}"
+Margin="0,5" BorderBrush="Black" Foreground="White"/>
+                </StackPanel>
+
+                <!-- RadioButtons -->
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="RadioButton"
+FontWeight="Bold"
+Margin="0,0,0,10" Foreground="White"/>
+
+                    <RadioButton Content="Normal"
+GroupName="RB"
+Margin="0,5" Foreground="White" BorderBrush="Black" Background="White"/>
+
+                    <RadioButton Content="Checked"
+GroupName="RB"
+IsChecked="True"
+Margin="0,5" Background="White" BorderBrush="Black" Foreground="White"/>
+
+                    <RadioButton Content="Disabled"
+IsEnabled="False"
+Margin="0,5" Foreground="White" BorderBrush="Black"/>
+                </StackPanel>
+
+                <!-- TextBox + DatePicker -->
+                <StackPanel Grid.Column="3">
+
+                    <TextBlock Text="TextBox"
+FontWeight="Bold" Foreground="White"/>
+
+                    <TextBox Text="Edit Me"
+Width="150"
+Margin="0,5" Foreground="White" BorderBrush="White" Background="Black"/>
+
+                    <TextBox Text="Read only"
+IsReadOnly="True"
+Width="150"
+Margin="0,5" Background="Black" BorderBrush="White" Foreground="White"/>
+
+                    <TextBox Text="Disabled"
+IsEnabled="False"
+Width="150"
+Margin="0,5" Foreground="White" BorderBrush="White" Background="Black"/>
+                    <PasswordBox Margin="50,0,50.5,0" BorderBrush="White" Foreground="White" Background="Black"/>
+                </StackPanel>
+                <StackPanel Grid.Column="3" HorizontalAlignment="Left" Height="208" Margin="268.5,0,-258,0" VerticalAlignment="Top" Width="240">
+                    <TextBlock Text="DatePicker"
+Margin="0,15,-11,0"
+FontWeight="Bold" Foreground="White"/>
+                    <DatePicker Width="170"
+Margin="40,5,30,5" Background="Black" Foreground="Black">
+                        <DatePicker.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                                <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                                <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                <GradientStop Color="#FF718597" Offset="0.375"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DatePicker.BorderBrush>
+                    </DatePicker>
+                    <DatePicker Width="170"
+IsEnabled="False"
+Margin="40,5,30,5" Foreground="Black" Background="Black">
+                        <DatePicker.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                                <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                                <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                <GradientStop Color="#FF718597" Offset="0.375"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DatePicker.BorderBrush>
+                    </DatePicker>
+                </StackPanel>
+
+            </Grid>
+            <Grid Grid.Row="1" Margin="0,30,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350"/>
+                    <ColumnDefinition Width="500"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Calendar"
+FontWeight="Bold" Foreground="White"/>
+                    <Calendar Width="250"
+Height="220" Background="White" Foreground="#FFFAFAFA">
+                        <Calendar.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                                <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                <GradientStop Color="#FF718597" Offset="0.375"/>
+                                <GradientStop Color="Black" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Calendar.BorderBrush>
+                    </Calendar>
+                </StackPanel>
+
+                <StackPanel Grid.ColumnSpan="2" Margin="350,0,214,52">
+                    <TextBlock Text="Slider"
+FontWeight="Bold" Foreground="White"/>
+                    <Slider
+TickPlacement="BottomRight"
+IsSnapToTickEnabled="True"
+TickFrequency="10"
+Margin="10,10,10,10"/>
+                    <Slider
+Margin="10,0,10,10"
+RenderTransformOrigin="0.5,0.5">
+                        <Slider.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.037"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Slider.RenderTransform>
+                    </Slider>
+                    <Slider Margin="10,0,10,0"/>
+                </StackPanel>
+                <WrapPanel Margin="300.5,-14,-260,101" Grid.Column="1">
+                    <Slider Orientation="Vertical"
+Height="150"
+Width="40"
+                            Value="0 "/>
+
+                    <Slider Orientation="Vertical"
+Height="150"
+Width="40"
+TickPlacement="Both"
+TickFrequency="10"/>
+                    <Slider Orientation="Vertical"
+Height="150"
+Width="40"
+IsEnabled="False"/>
+                </WrapPanel>
+            </Grid>
+
+            <!-- Toolbar -->
+            <StackPanel Grid.Row="2" Margin="0,30,971,197" Grid.RowSpan="2">
+
+                <TextBlock Text="ToolBar"
+FontWeight="Bold" Foreground="White"/>
+
+                <ToolBarTray Background="#FF621D16" Margin="0,0,20,0">
+                    <ToolBar BorderBrush="Black" Foreground="Black">
+                        <Button Content="Button" Foreground="White" BorderBrush="Black" Background="#FF801F1F"/>
+                        <CheckBox Content="CheckBox" Foreground="White" BorderBrush="Black" Background="#FF801F1F"/>
+                        <TextBox Width="80"
+Text="TextBox" Background="#FF801F1F" BorderBrush="Black" Foreground="White"/>
+                        <ToggleButton Content="Toggle" Foreground="White" Background="#FF801F1F" BorderBrush="Black"/>
+                        <RadioButton Content="Radio 1" BorderBrush="Black" Foreground="White" Background="#FF801F1F"/>
+                        <RadioButton Content="Radio 2" Background="#FF801F1F" BorderBrush="Black" Foreground="White"/>
+                    </ToolBar>
+                </ToolBarTray>
+
+            </StackPanel>
+
+            <!-- Нижний ряд -->
+            <Grid Grid.Row="3" Margin="0,138,0,-108">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="199*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- ComboBox -->
+                <StackPanel Grid.Column="0" Margin="0,0,0.5,10" Grid.RowSpan="2">
+                    <TextBlock Text="ComboBox"
+FontWeight="Bold" Foreground="White" Margin="50, 0, 0, 0"/>
+
+                    <ComboBox Width="150"
+Margin="0,5"/>
+
+                    <ComboBox Width="150"
+Margin="0,5"
+IsEditable="True"
+Text="Edit Me"/>
+
+                    <ComboBox Width="150"
+Margin="0,5">
+                        <ComboBoxItem>First Normal Item</ComboBoxItem>
+                        <ComboBoxItem>Second Normal Item</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- ListBox -->
+                <StackPanel Grid.ColumnSpan="2" Margin="250,0,0,0" Grid.RowSpan="2">
+                    <TextBlock Text="ListBox"
+FontWeight="Bold" Foreground="White"/>
+
+                    <ListBox Width="180"
+Height="150">
+                        <ListBoxItem>First Normal Item</ListBoxItem>
+                        <ListBoxItem>Second Normal Item</ListBoxItem>
+                        <ListBoxItem>Third Normal Item</ListBoxItem>
+                        <ListBoxItem>Fourth Normal Item</ListBoxItem>
+                        <ListBoxItem>Fifth Normal Item</ListBoxItem>
+                    </ListBox>
+                </StackPanel>
+
+                <!-- ListView -->
+                <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,250,0" Grid.RowSpan="2">
+                    <TextBlock Text="ListView"
+FontWeight="Bold" Foreground="White"/>
+
+                    <ListView Width="220"
+Height="150">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Content"
+Width="120"
+DisplayMemberBinding="{Binding Name}"/>
+
+                                <GridViewColumn Header="Value"
+Width="60"
+DisplayMemberBinding="{Binding Value}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+
+                <!-- TreeView -->
+                <StackPanel Grid.Column="3" Margin="0.5,0,0,0" Grid.RowSpan="2">
+                    <TextBlock Text="TreeView"
+FontWeight="Bold" Foreground="White"/>
+
+                    <TreeView Width="180"
+Height="150">
+                        <TreeViewItem Header="Top One"/>
+                        <TreeViewItem Header="Top Two"/>
+                        <TreeViewItem Header="Top Three"/>
+                    </TreeView>
+                </StackPanel>
+
+            </Grid>
+            <StackPanel HorizontalAlignment="Left" Height="96" Margin="498,20,0,0" Grid.Row="2" VerticalAlignment="Top" Width="731" Grid.RowSpan="2">
+                <TextBlock Text="Menu / ContextMenu"
+Margin="40,20,0,5"
+FontWeight="Bold" Foreground="White"/>
+                <Menu Width="450" Margin="-200,0,0,0" Background="#FF801F1F" BorderBrush="Black" Foreground="White">
+                    <MenuItem Header="Top One" Background="#FF801F1F" BorderBrush="Black" Foreground="White"/>
+                    <MenuItem Header="Top Two" Background="#FF801F1F" BorderBrush="Black" Foreground="White"/>
+                    <MenuItem Header="Top Three" Background="#FF801F1F" Foreground="White" BorderBrush="Black"/>
+                    <MenuItem Header="Menu with Many Items" Background="#FF801F1F" Foreground="White" BorderBrush="Black">
+                        <MenuItem Header="Item 1"/>
+                        <MenuItem Header="Item 2"/>
+                        <MenuItem Header="Item 3"/>
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</Window>
